@@ -427,6 +427,8 @@ class build_params:
     first = CH0
     last = CH1
     workers = 1
+    scale_x = 1.0
+    scale_y = 1.0
 
 
 def print_progress_bar(current, total, unicode_code='', suffix='Complete', length=50, fill='█'):
@@ -505,6 +507,8 @@ def build(font='fonts/Heiti.ttc'):
     last = build_params.last
     output_file = build_params.output
     workers = build_params.workers
+    scale_x = build_params.scale_x
+    scale_y = build_params.scale_y
 
     total_chars = last - first + 1
     code_points = list(range(first, last + 1))
@@ -526,7 +530,7 @@ def build(font='fonts/Heiti.ttc'):
                 if success:
                     normalized = []
                     for seg in ssegs:
-                        normalized.append([(perc(x[0] / float(w)), perc(x[1] / float(h))) for x in seg])
+                        normalized.append([(perc(x[0] / float(w) * scale_x), perc(x[1] / float(h) * scale_y)) for x in seg])
                     result_dict[ind] = normalized
                 completed += 1
                 unicode_code = hex(code_point)[2:].upper()
@@ -554,7 +558,7 @@ def build(font='fonts/Heiti.ttc'):
                 ind = 'U+' + hex(code_point)[2:].upper()
                 normalized = []
                 for seg in ssegs:
-                    normalized.append([(perc(x[0] / float(w)), perc(x[1] / float(h))) for x in seg])
+                    normalized.append([(perc(x[0] / float(w) * scale_x), perc(x[1] / float(h) * scale_y)) for x in seg])
                 if output_file:
                     result_dict[ind] = normalized
                 else:
