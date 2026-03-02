@@ -1,0 +1,20 @@
+[package]
+name = "char2stroke-rs"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+name = "char2stroke_rs"
+crate-type = ["cdylib"]
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+
+[pyo3]
+extension-name = "char2stroke_rs"
+
+[dependencies]
+pyo3 = "0.21"
+rand = "0.8"

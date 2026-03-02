@@ -16,8 +16,15 @@ The algorithm scans a raster rendering of a character at many different angles t
 
 ## Dependencies
 
-- Python 2
-- PIL/Pillow (`pip install pillow`)
+- Python 3
+- PIL/Pillow (`pip3 install pillow`)
+- NumPy (`pip3 install numpy`)
+
+- Rust
+- `cargo build --release`
+- `cp target/release/char2stroke_rs.dll target/release/char2stroke_rs.pyd`
+
+- inkscape
 
 
 ## File Formats

@@ -11,7 +11,7 @@ CH1 = 0x9fef # unicode <CJK Ideograph, Last>
 
 if __name__ == "__main__":
 
-    data = json.loads(open(sys.argv[1],"r").read())
+    data = json.loads(open(sys.argv[1],"r", encoding='utf-8').read())
 
     w = 32
     k = 0
@@ -30,5 +30,5 @@ if __name__ == "__main__":
             if s!=d[-1]:
                 res += " R"
 
-        result = str(i).rjust(5)+str(len(res)/2).rjust(3)+res
-        print result
+        result = str(i).rjust(5)+str(len(res)//2).rjust(3)+res
+        print(result)
