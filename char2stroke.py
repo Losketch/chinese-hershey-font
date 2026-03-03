@@ -595,7 +595,7 @@ class test_params:
     nsample = 8
     corpus = ''
 
-def test(fonts = ["C:\Windows\Fonts\simsun.ttc"]):
+def test(fonts = [r"C:\Windows\Fonts\simsun.ttc"]):
     w, h = test_params.width, test_params.height
     corpus = test_params.corpus if len(test_params.corpus) else open(
         "teststrings.txt",'r', encoding='utf-8').readlines()[-1]

@@ -88,15 +88,15 @@ Optional arguments:
   --output [OUTPUT]
   --strw [STRW]
   --width [WIDTH]
-  --scale-x [SCALE_X]
-  --scale-y [SCALE_Y]
+  --scale_x [SCALE_X]
+  --scale_y [SCALE_Y]
 ```
 - `width` and `height` determines the dimension of the raster images of characters to be scanned. The larger these numbers, the more detailed and the slower. Default is `100` for both.
 - `strw` is the approximate stroke width (in pixels, at given `width` and `height`). This is used when merging strokes. Default is `10`.
 - `first` and `last` specifies the range of unicode characters to include. Default values are `0x4e00` and `0x9fef`, which contains all the "CJK Ideograph" glyphs.
 - `ngradient` is the number of different gradients used to scan the image. At `ngradient = 1`, only strokes at 0°, 45° and 90° are scanned, while at `2`, `3` and `4`, slopes of `atan(1/2)`, `atan(1/3)` and `atan(1/4)` are also included. Default is `2`.
 - `output`: path to write the output file. When this is not specified, the program writes to `stdout`, and `>`([info](https://en.wikipedia.org/wiki/Redirection_(computing))) and `|`([info](https://en.wikipedia.org/wiki/Pipeline_(Unix))) can be used to redirect the output.
-- `scale_x` and `scale_y`: scaling factors applied to the normalized coordinates. By default both are `1.0`, resulting in coordinates in the range `0-1` for both axes. Use different values to achieve non-square aspect ratios (e.g., `--scale-x 1.0 --scale-y 0.5` for a 2:1 width-to-height ratio).
+- `scale_x` and `scale_y`: scaling factors applied to the normalized coordinates. By default both are `1.0`, resulting in coordinates in the range `0-1` for both axes. Use different values to achieve non-square aspect ratios (e.g., `--scale_x 1.0 --scale_y 0.5` for a 2:1 width-to-height ratio).
 
 
 ### Quick Tests

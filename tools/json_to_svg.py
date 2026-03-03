@@ -48,7 +48,7 @@ def json_to_svg(input_json, output_dir, svg_size=1024, stroke_width=10):
             svg_content = f'''<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" 
      width="{svg_size}" height="{svg_size}" 
-     viewBox="0 -{svg_size} {svg_size} {svg_size}">
+     viewBox="0 0 {svg_size} {svg_size}">
 {chr(10).join(f'  {elem}' for elem in path_elements)}
 </svg>'''
 
